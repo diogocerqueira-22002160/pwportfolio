@@ -138,6 +138,7 @@
 .posts_container .post .post-content h2{
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 .botao_editar{
