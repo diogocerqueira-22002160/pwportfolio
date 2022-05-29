@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-import os
 # config/settings.py
 from environs import Env
 
@@ -44,8 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',  # novo
     'django.contrib.staticfiles',
-    'cloudinary_storage',
-    'cloudinary',
     'portfolio',
 
 ]
@@ -135,16 +132,3 @@ STATICFILES_DIRS = [str(BASE_DIR.joinpath('portfolio/static'))]  # novo se a pas
 STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))   # novo
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # novo
 
-CLOUDINARY_STORAGE = {
-  'CLOUD_NAME': "dhtkxkkpq",
-  'API_KEY': "214968219959988",
-  'API_SECRET': "qhkJEv-BkfNLLtDdpctpg9wZJPw",
-}
-
-MEDIA_URL = '/portfolio/'
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-MEDIA_URL = "/media/"

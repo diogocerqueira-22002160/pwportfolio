@@ -110,7 +110,3 @@ def desenha_grafico_resultados(request):
     plt.barh(lista_nomes, lista_pontuacao)
     plt.savefig('portfolio/static/portfolio/images/grafico.png', bbox_inches='tight')
 
-
-def resolution_path(instance, filename):
-    return f'users/{instance.id}/'
-
