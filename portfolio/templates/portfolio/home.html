@@ -8,14 +8,24 @@
         <div class="text-hero-image">
             <h2>O meu portfolio</h2>
             <p>Olá sou o Diogo e sou estudande de engenharia informatica</p>
-            <a href="#labs">Sobre Mim</a>
+            <a href="#sobre">Sobre Mim</a>
         </div>
+    </section>
+    <section class="sobre" id="sobre">
+        <div>
+            {% load static %}
+            <img src="{% static 'portfolio/images/eu.jpg' %}">
+            <h3>Diogo Cerqueira</h3>
+            <p>Olá! Tenho 20 anos e terminei o ensino médio
+            em economia e candidatei-me a uma licenciatura em
+            engenharia informática para seguir o que
+            pretendo fazer o que é Software Developer</p>
+        </div>
+
+
+
     </section>
 
 
-    <h3>Titulo</h3>
-    <p>texto texto texto texto texto texto texto </p>
 
-    {% load static %}
-    <img src="{% static 'portfolio/images/image.jpg' %}">
 {% endblock %}
