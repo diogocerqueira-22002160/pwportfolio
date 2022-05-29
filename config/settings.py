@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 # config/settings.py
 from environs import Env
+import os
 
 env = Env()
 env.read_env()
@@ -131,4 +132,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('portfolio/static'))]  # novo se a pasta static estiver na pasta da aplicação app, altere para str(BASE_DIR.joinpath('app/static'))
 STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))   # novo
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # novo
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
