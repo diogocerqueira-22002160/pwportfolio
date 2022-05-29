@@ -18,6 +18,7 @@ class Professor(models.Model):
     def __str__(self):
         return self.nome
 
+
 class Cadeira(models.Model):
     nome = models.CharField(max_length=30)
     ects = models.IntegerField(default=1)
