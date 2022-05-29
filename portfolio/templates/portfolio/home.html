@@ -1,0 +1,21 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+    <section class="hero-image">
+        {% load static %}
+        <video src="{% static 'portfolio/images/HeroImage.mp4' %}" muted loop autoplay></video>
+        <div class="overlay"></div>
+        <div class="text-hero-image">
+            <h2>O meu portfolio</h2>
+            <p>Olá sou o Diogo e sou estudande de engenharia informatica</p>
+            <a href="#labs">Sobre Mim</a>
+        </div>
+    </section>
+
+
+    <h3>Titulo</h3>
+    <p>texto texto texto texto texto texto texto </p>
+
+    {% load static %}
+    <img src="{% static 'portfolio/images/image.jpg' %}">
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+    <h3>Novo post</h3>
+    <form method="post" action="" autocomplete="off">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+        <input type="submit" value="Gravar">
+
+    </form>
+
+{% endblock %}

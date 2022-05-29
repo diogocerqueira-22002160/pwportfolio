@@ -1,0 +1,34 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+	<section>
+        <h3>Projetos</h3>
+        <div class="projeto_container">
+                {% for projeto in projetos %}
+                    <div class="projeto">
+                        <div class="projeto-img">
+                            {% load static %}
+                            <img src="{{ projeto.imagem.url }}">
+                        </div>
+                        <div class="projeto-body">
+                            <span class="projeto-cadeira-nome"> {{ projeto.cadeira.nome }} </span>
+                            <h4>
+                                {{ projeto.titulo }}
+                            </h4>
+                            <p>
+                                {{ projeto.descricao }}
+                            </p>
+
+                            <div class="projeto-prof">
+                                <img src="{{ projeto.cadeira.professor.imagem}}">
+                                <div class="prof-info">
+                                    <h5>{{ projeto.cadeira.professor.nome }}</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                {% endfor %}
+            </div>
+    </section>
+{% endblock %}

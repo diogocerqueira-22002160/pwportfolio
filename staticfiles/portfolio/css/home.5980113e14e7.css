@@ -1,0 +1,68 @@
+.hero-image
+{
+    position: relative;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    transition: 0.5s;
+    z-index: 2;
+}
+
+.hero-image video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.text-hero-image {
+    position: absolute;
+    z-index: 10;
+    top: 35%;
+    left: 100px;
+    text-align: left;
+}
+
+.text-hero-image h2 {
+    font-size: 5em;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1em;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+}
+
+.text-hero-image p
+{
+    font-size: 1.1em;
+    color: #fff;
+    margin: 20px 0;
+    font-weight: 400;
+    max-width: 700px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.text-hero-image a{
+  display: inline-block;
+  font-size: 1em;
+  background: #fff;
+  padding: 20px 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #111;
+  letter-spacing: 2px;
+  transition: 0.2s;
+}
+
+.text-hero-image a:hover{
+  letter-spacing: 6px;
+}

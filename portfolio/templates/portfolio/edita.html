@@ -1,0 +1,14 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+    <h3>Novo post</h3>
+    <form action="{% url 'portfolio:edita' post_id %}" method="POST" autocomplete="off">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <a href="{% url 'portfolio:blog' %}" role="button" class="btn">Cancelar</a>
+        <input type="submit" value="Gravar" class="btn" >
+        <a href="{% url 'portfolio:apaga' post_id %}" role="button" class="btn">Apagar</a>
+    </form>
+
+{% endblock %}

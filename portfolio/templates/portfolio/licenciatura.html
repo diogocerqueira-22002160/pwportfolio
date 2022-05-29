@@ -1,0 +1,47 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+	<section>
+        <h3>Licenciatura</h3>
+        <div class="cadeira_container">
+            {% for cadeira in cadeiras %}
+                <div class="cadeira">
+                    <div class="cadeira-img">
+                        {% load static %}
+                        <img src="{{ cadeira.imagem.url }}">
+                    </div>
+                    <div class="cadeira-body">
+                        <span class="cadeira-nome"> {{ cadeira.nome}} </span>
+                        <span class="cadeira-ects">{{ cadeira.ects }} ECTS</span>
+                        <h4>
+                            {{ cadeira.topicos }}
+                        </h4>
+                        <p>
+                            {{ cadeira.ano }} ano {{ cadeira.semestre }} semestre
+                        </p>
+                        <p>
+                            {% if cadeira.ranking == 1 %}
+                                ⭐
+                            {% elif cadeira.ranking == 2 %}
+                                ⭐⭐
+                            {% elif cadeira.ranking == 3 %}
+                                ⭐⭐⭐
+                            {% elif cadeira.ranking == 4 %}
+                                ⭐⭐⭐⭐
+                            {% elif cadeira.ranking == 5 %}
+                                ⭐⭐⭐⭐⭐
+                            {% endif %}
+                        </p>
+                        <div class="cadeira-prof">
+                            <img src="{{ cadeira.professor.imagem}}">
+                            <div class="prof-info">
+                                <h5>{{ cadeira.professor.nome }}</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

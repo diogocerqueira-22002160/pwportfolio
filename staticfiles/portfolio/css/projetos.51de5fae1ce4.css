@@ -1,0 +1,79 @@
+section{
+    min-height: 90vh;
+    padding-top: 2rem;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+section > h3 {
+    text-align: center;
+    font-size: 3rem;
+    padding-bottom: 2rem;
+}
+
+.projeto_container {
+  display: flex;
+  width: 1040px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  color: #10182f;
+  font-family: "Roboto", sans-serif;
+}
+
+.projeto {
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 300px;
+}
+
+.projeto-img img{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.projeto-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  min-height: 250px;
+}
+
+.projeto-cadeira-nome {
+  background: #47bcd4;
+  border-radius: 50px;
+  font-size: 12px;
+  margin: 0;
+  color: #fff;
+  padding: 2px 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.projeto-body p {
+  font-size: 13px;
+  margin: 0 0 40px;
+}
+.projeto-prof {
+  display: flex;
+  margin-top: auto;
+}
+
+.projeto-prof img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+.prof-info h5 {
+  margin: 0;
+}
+
+.projeto-body h4{
+  margin: 20px 0 ;
+}
