@@ -13,7 +13,7 @@ class Post(models.Model):
 
 class Professor(models.Model):
     nome = models.CharField(max_length= 64)
-    imagem = models.ImageField(upload_to='portfolio/static/portfolio/images/professores', null=True, blank=True)
+    imagem = models.ImageField(upload_to='pictures/', null=True, blank=True)
 
     def __str__(self):
         return self.nome
@@ -26,7 +26,7 @@ class Cadeira(models.Model):
     semestre = models.IntegerField(default=1)
     topicos = models.CharField(max_length=100)
     ranking = models.IntegerField(default=1)
-    imagem = models.ImageField(upload_to='portfolio/static/portfolio/images/cadeira', null=True, blank=True)
+    imagem = models.ImageField(upload_to='pictures/', null=True, blank=True)
     professor = models.ForeignKey(Professor, on_delete=models.PROTECT, related_name="Cadeiras")
 
     def __str__(self):
@@ -35,7 +35,7 @@ class Cadeira(models.Model):
 class Projeto(models.Model):
     titulo = models.CharField(max_length=30)
     descricao = models.CharField(max_length=500)
-    imagem = models.ImageField(upload_to='portfolio/static/portfolio/images/projetos', null=True, blank=True)
+    imagem = models.ImageField(upload_to='pictures/', null=True, blank=True)
     cadeira = models.ForeignKey(Cadeira, on_delete=models.PROTECT, related_name="Projetos")
 
     def __str__(self):
