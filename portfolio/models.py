@@ -20,7 +20,7 @@ class Professor(models.Model):
 
 
 class Cadeira(models.Model):
-    nome = models.CharField(max_length=30)
+    nome = models.CharField(max_length=50)
     ects = models.IntegerField(default=1)
     ano = models.IntegerField(default=1)
     semestre = models.IntegerField(default=1)
