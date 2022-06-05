@@ -1,3 +1,14 @@
+main{
+  background-image: url("{% static 'portfolio/images/blog.jpg' %}");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+h3{
+  color: white;
+}
+
 .post_body{
   margin: 0;
   padding: 0;

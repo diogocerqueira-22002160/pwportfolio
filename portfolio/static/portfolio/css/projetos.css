@@ -13,7 +13,6 @@ section > h3 {
 
 .projeto_container {
   display: flex;
-  width: 1040px;
   justify-content: space-evenly;
   flex-wrap: wrap;
   color: #10182f;
