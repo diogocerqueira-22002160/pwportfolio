@@ -20,11 +20,11 @@ class Professor(models.Model):
 
 
 class Cadeira(models.Model):
-    nome = models.CharField(max_length=50)
+    nome = models.CharField(max_length=64)
     ects = models.IntegerField(default=1)
     ano = models.IntegerField(default=1)
     semestre = models.IntegerField(default=1)
-    topicos = models.CharField(max_length=100)
+    topicos = models.CharField(max_length=255)
     ranking = models.IntegerField(default=1)
     imagem = models.ImageField(upload_to='pictures/', null=True, blank=True)
     professor = models.ForeignKey(Professor, on_delete=models.PROTECT, related_name="Cadeiras")
@@ -34,7 +34,7 @@ class Cadeira(models.Model):
 
 class Projeto(models.Model):
     titulo = models.CharField(max_length=30)
-    descricao = models.CharField(max_length=500)
+    descricao = models.CharField(max_length=255)
     imagem = models.ImageField(upload_to='pictures/', null=True, blank=True)
     cadeira = models.ForeignKey(Cadeira, on_delete=models.PROTECT, related_name="Projetos")
 
