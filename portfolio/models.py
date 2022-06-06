@@ -19,6 +19,7 @@ class Professor(models.Model):
         return self.nome
 
 
+
 class Cadeira(models.Model):
     nome = models.CharField(max_length=64)
     ects = models.IntegerField(default=1)
