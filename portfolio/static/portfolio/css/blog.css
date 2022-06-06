@@ -1,8 +1,8 @@
 main{
-  background-image: url("{% static 'portfolio/images/blog.jpg' %}");
+  /*background-image: url("{% static 'portfolio/images/blog.jpg' %}");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: cover;*/
 }
 
 h3{
