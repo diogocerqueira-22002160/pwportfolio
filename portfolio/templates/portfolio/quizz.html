@@ -1,15 +1,21 @@
 {% extends 'portfolio/layout.html' %}
 
 {% block main %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'portfolio/css/quizz.css' %}">
     <section>
-        <h3>Quizz</h3>
-        <form method="post" action="" autocomplete="off" enctype="multipart/form-data">
+        <div class="quizz">
+            <form method="POST" action="" autocomplete="off" enctype="multipart/form-data">
             {% csrf_token %}
             <fieldset>
-                <legend>Programação Web</legend>
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" placeholder="Insira o nome" autofocus><br><br>
-                <h1>Pergunta 1:</h1>
+                <legend><b>Quizz</b></legend>
+                <div class="inputBox">
+                    <input type="text" name="nome" id="nome" class="inputNome" required>
+                    <label for="nome" class="labelNome">Nome</label>
+                </div>
+                <br>
+
+                <h1>Pergunta 1:</h1><br>
                 <label>Qual o significado de HTML?</label><br><br>
                 <input type="radio" id="1a" name="questao1" value="a">
                 <label for="1a"> Home Tool Markup Language </label><br>
@@ -18,10 +24,10 @@
                 <input type="radio" id="1c" name="questao1" value="c">
                 <label for="1c"> Hyperlinks and Text Markup Language</label><br><br>
 
-                <h1>Pergunta 2:</h1>
+                <h1>Pergunta 2:</h1><br>
                 <label>Qual dos seguintes atributos especifica um texto alternativo para uma imagem, se a imagem não puder ser exibida? </label><br><br>
                 <input type="radio" id="2a" name="questao2" value="a">
-                <label for="2a"> src </a> </label><br>
+                <label for="2a"> src </label><br>
                 <input type="radio" id="2b" name="questao2" value="b">
                 <label for="2b"> alt </label><br>
                 <input type="radio" id="2c" name="questao2" value="c">
@@ -29,23 +35,23 @@
                 <input type="radio" id="2d" name="questao2" value="d">
                 <label for="2d"> legend </label><br><br>
 
-                <h1>Pergunta 3:</h1>
+                <h1>Pergunta 3:</h1><br>
                 <label>Qual tipo de entrada define uma barra deslizante? </label><br><br>
                 <input type="radio" id="3a" name="questao3" value="a">
-                <label for="3a"> range </a> </label><br>
+                <label for="3a"> range </label><br>
                 <input type="radio" id="3b" name="questao3" value="b">
                 <label for="3b"> slider </label><br>
                 <input type="radio" id="3c" name="questao3" value="c">
-                <label for="3c"> search</label><br>
+                <label for="3c"> search </label><br>
                 <input type="radio" id="3d" name="questao3" value="d">
-                <label for="3d"> controls </label><br><br>
+                <label for="3d"> controls </label>
 
-                <input type="submit" value="Submit">
+                <br><br>
+                <input type="submit" name="submit" id="submit">
             </fieldset>
-
         </form>
+        </div>
 
-        {% load static %}
-        <img src="{% static 'portfolio/images/grafico.png' %}" alt="" >
+        <img src="data:image/png;base64,{{ data }}" alt="graf">
     </section>
 {% endblock %}

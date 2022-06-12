@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class Post(models.Model):
     autor = models.CharField(max_length=30)
     data = models.DateTimeField(auto_now_add = True)
@@ -11,13 +12,13 @@ class Post(models.Model):
     def __str__(self):
         return f'"{self.titulo}" por {self.autor}'
 
+
 class Professor(models.Model):
     nome = models.CharField(max_length= 64)
     imagem = models.ImageField(upload_to='pictures/', null=True, blank=True)
 
     def __str__(self):
         return self.nome
-
 
 
 class Cadeira(models.Model):
@@ -33,6 +34,7 @@ class Cadeira(models.Model):
     def __str__(self):
         return self.nome
 
+
 class Projeto(models.Model):
     titulo = models.CharField(max_length=30)
     descricao = models.CharField(max_length=255)
@@ -41,6 +43,7 @@ class Projeto(models.Model):
 
     def __str__(self):
         return self.titulo
+
 
 class PontuacaoQuizz(models.Model):
     nome = models.CharField(max_length=30)

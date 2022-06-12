@@ -12,5 +12,8 @@ urlpatterns = [
     path('nova', views.nova_page_view, name='nova'),
     path('edita/<int:post_id>', views.edita_page_view, name='edita'),
     path('apaga/<int:post_id>', views.apaga_page_view, name='apaga'),
-    path('quizz', views.quizz_page_view, name='quizz'),
+    path('quizz/', views.quizz_page_view, name='quizz'),
+    path('login/', views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'),
+    path('weather', views.weather_page_view, name='weather'),
 ]

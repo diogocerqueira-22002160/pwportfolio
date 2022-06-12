@@ -1,180 +1,195 @@
 
-h3{
-  color: white;
+
+section{
+    min-height: 90vh;
+    padding-top: 2rem;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+section > h3 {
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    padding-bottom: 2rem;
 }
 
 .post_body{
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
-  font-family:'Poppins',sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    font-family:'Poppins',sans-serif;
 }
 
 .posts_container{
-  position: relative;
-  width: 1000px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap
+    position: relative;
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .posts_container .post{
-  position: relative;
-  width: 300px;
-  height: 400px;
-  background: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
 }
 
 .posts_container .post:before{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  z-index: 20;
-  pointer-events: none;
-
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 20;
+    pointer-events: none;
 }
 
-.posts_container .post,
 .posts_container .post .post-overlay{
-  background: linear-gradient(45deg,#000000,#2d3436);
+    background-color: rgb(20, 147, 220);
 }
 
 .posts_container .post .post-inicial{
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .posts_container .post .post-inicial h2{
-  margin: 10px 0 0;
-  padding: 0;
-  color: white;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+    margin: 10px 0 0;
+    padding: 0;
+    color: #10182f;
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
 .posts_container .post .post-inicial p{
-  margin: 10px 0 0;
-  padding: 0;
-  color: white;
-  font-size: 10px;
-  text-transform: uppercase;
+    margin: 10px 0 0;
+    padding: 0;
+    color: #10182f;
+    font-size: 10px;
 }
 
 .posts_container .post .post-overlay{
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  width: 50px;
-  height: 50px;
-  box-shadow: 0 2px 5px rgba(0,0,0,.2);
-  cursor: pointer;
-  border-radius: 50%;
-  transition: 0.5s;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.5s;
 }
 
 .posts_container .post .post-overlay:hover{
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  box-shadow: none;
-  opacity: 0.9;
-  border-radius: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+    opacity: 0.9;
+    border-radius: 0;
 }
 
 .posts_container .post .post-overlay:before{
-  content: 'Read';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  color: white;
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: 500;
-  Letter-spacing: 1px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition-delay: 0.5s;
+    content: 'Read';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: white;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 500;
+    Letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-delay: 0.5s;
 }
 
 .posts_container .post .post-overlay:hover:before{
-  display: none;
-  transition-delay: 0s;
-
+    display: none;
+    transition-delay: 0s;
 }
 
 .posts_container .post .post-content{
-  padding: 20px;
-  box-sizing: border-box;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0s;
-  color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0s;
+    color: white;
 }
 
 .posts_container .post .post-overlay:hover ~ .post-content{
-  opacity: 1;
-  visibility: visible;
-  transition: 0.2s;
-  transition-delay: 0.5s;
+    opacity: 1;
+    visibility: visible;
+    transition: 0.2s;
+    transition-delay: 0.5s;
 }
 
 .posts_container .post .post-content h2{
-  margin: 0;
-  padding: 0;
-  text-align: center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
 .botao_editar{
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  width: 50px;
-  height: 50px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 50px;
+    height: 50px;
 }
 
 .botao_editar button{
-  background-color: transparent;
-  box-shadow: 0 2px 5px rgba(0,0,0,.2);
-  border-radius: 50%;
-  border: none;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
+    background-color: transparent;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    border-radius: 50%;
+    border: none;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.novo {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
 }
 
 .new_post{
-  text-decoration: none;
-  position: absolute;
-  right: 50px;
-  color: #0294c5;
-  border: 3px solid #0294c5;
-  padding: 20px 40px;
-  font-size: 14px;
-  font-family: sans-serif;
-  letter-spacing: 5px;
-  transition: all 0.5s;
-  width: fit-content;
-  background: rgb(34, 34, 34);
+    text-decoration: none;
+    background-image: linear-gradient(to right,rgb(0, 92, 197), rgb(90, 20, 220));
+    border: none;
+    width: 15%;
+    padding: 15px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
 }

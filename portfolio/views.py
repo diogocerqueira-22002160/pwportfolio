@@ -1,9 +1,8 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from matplotlib import pyplot as plt
+from django.contrib.auth import authenticate, login, logout
 
-import datetime
 
 from .forms import PostForm
 from .models import Post
@@ -11,21 +10,18 @@ from .models import Cadeira
 from .models import Projeto
 from .models import PontuacaoQuizz
 
+from matplotlib import pyplot as plt
+import io
+import urllib
+import base64
+import matplotlib
+
+matplotlib.use('Agg')
 # Create your views here.
 
 
 def home_page_view(request):
-    agora = datetime.datetime.now()
-    local = 'Lisboa'
-    topicos = ['HTML', 'CSS', 'Python', 'Django', 'JavaScript']
-
-    context = {
-        'hora': agora.hour,
-        'local': local,
-        'topicos': topicos,
-    }
-
-    return render(request, 'portfolio/home.html', context)
+        return render(request, 'portfolio/home.html')
 
 
 def projetos_page_view(request):
@@ -93,20 +89,65 @@ def quizz_page_view(request):
         p = pontuacao_quizz(request)
         r = PontuacaoQuizz(nome=n, pontuacao=p)
         r.save()
-        desenha_grafico_resultados(request)
-    return render(request, 'portfolio/quizz.html')
+
+    context = {
+        'data': desenha_grafico_resultados()
+    }
+
+    return render(request, 'portfolio/quizz.html', context)
 
 
-def desenha_grafico_resultados(request):
-    resultados = sorted(PontuacaoQuizz.objects.all(), key=lambda objeto: objeto.pontuacao, reverse=True)
+def desenha_grafico_resultados():
+        pontuacoes = PontuacaoQuizz.objects.all().order_by('pontuacao')
 
-    lista_nomes = []
-    lista_pontuacao = []
+        nomesList = [pontuacao.nome for pontuacao in pontuacoes]
+        pontuacaoList = [pontuacao.pontuacao for pontuacao in pontuacoes]
 
-    for pessoa in resultados:
-        lista_nomes.append(pessoa.nome)
-        lista_pontuacao.append(pessoa.pontuacao)
+        plt.barh(nomesList, pontuacaoList)
+        plt.ylabel("Pontuacao")
+        plt.autoscale()
 
-    plt.barh(lista_nomes, lista_pontuacao)
-    plt.savefig('portfolio/static/portfolio/images/grafico.png', bbox_inches='tight')
+        fig = plt.gcf()
+        plt.close()
 
+        buf = io.BytesIO()
+        fig.savefig(buf, format='png')
+
+        buf.seek(0)
+        string = base64.b64encode(buf.read())
+        uri = urllib.parse.quote(string)
+
+        return uri
+
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = authenticate(
+            request,
+            username=username,
+            password=password)
+
+        if user is not None:
+            login(request, user)
+            return HttpResponseRedirect(reverse('portfolio:home'))
+        else:
+            return render(request, 'portfolio/login.html', {
+                'message': 'Credenciais invalidas.'
+            })
+
+    return render(request, 'portfolio/login.html')
+
+
+def logout_view(request):
+    logout(request)
+
+    return render(request, 'portfolio/login.html', {
+        'message': 'Foi desconetado.'
+    })
+
+
+def weather_page_view(request):
+    return render(request, 'portfolio/weather.html')
