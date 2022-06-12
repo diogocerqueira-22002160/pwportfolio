@@ -24,7 +24,7 @@ function weather(){
     var tempOut = document.querySelector('.temp')
     var conditionOut = document.querySelector('.condition')
 
-    fetch('http://api.weatherapi.com/v1/current.json?key=6453194fd1b3454e97e184604221106&q=Lisboa&aqi=no&lang=pt')
+    fetch('https://api.weatherapi.com/v1/current.json?key=6453194fd1b3454e97e184604221106&q=Lisboa&aqi=no&lang=pt')
     .then(response => response.json())
     .then(data => {
         console.log(data);
