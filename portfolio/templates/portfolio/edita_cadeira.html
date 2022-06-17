@@ -1,0 +1,23 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'portfolio/css/edita.css' %}">
+    <section>
+        <h3>Editar</h3>
+        <div class="edita">
+            <form action="{% url 'portfolio:edita_cadeira' cadeira_id %}" method="POST" autocomplete="off" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {{form.as_p}}
+
+                <div class="buttons">
+                    <a href="{% url 'portfolio:licenciatura' %}" role="button" class="btn">Cancelar</a>
+                    <input type="submit" value="Gravar" class="btn" >
+                    <a href="{% url 'portfolio:apaga_cadeira' cadeira_id %}" role="button" class="btn">Apagar</a>
+                </div>
+
+            </form>
+        </div>
+    </section>
+{% endblock %}

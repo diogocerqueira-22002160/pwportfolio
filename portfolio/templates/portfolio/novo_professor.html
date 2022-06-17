@@ -1,0 +1,16 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'portfolio/css/novo2.css' %}">
+    <section>
+        <h3>Novo Professor</h3>
+        <div class="novo">
+            <form method="post" action="" autocomplete="off" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="Gravar" id="submit">
+            </form>
+        </div>
+    </section>
+{% endblock %}
