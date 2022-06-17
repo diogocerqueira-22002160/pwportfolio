@@ -5,33 +5,28 @@
 <link rel="stylesheet" href="{% static 'portfolio/css/blog.css' %}">
     <section>
         <h3>Blog</h3>
-        <div class="novo">
-            <a href="{% url 'portfolio:nova' %}" class="new_post">Novo Post</a>
-        </div>
-        <div class="post_body">
-
-            <div class="posts_container">
-                {% for post in posts %}
-                    <div class="post">
-                        <div class="post-inicial">
-                            <div>
-                                <h2>{{ post.titulo }}</h2>
-                                <p>{{ post.autor }}</p>
-                                <a href="{% url 'portfolio:edita' post.id %}" class="botao_editar">
-                                   <button>
-                                        <i class="material-icons" style="color:black">edit</i>
-                                   </button>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="post-overlay"></div>
-                        <div class="post-content">
+        <a href="{% url 'portfolio:novo_post' %}" class="new_post">Novo Post</a>
+        <div class="posts_container">
+            {% for post in posts %}
+                <div class="post">
+                    <div class="post-inicial">
+                        <div>
                             <h2>{{ post.titulo }}</h2>
-                            <p>{{ post.descricao }}</p>
+                            <p>{{ post.autor }}</p>
+                            <a href="{% url 'portfolio:edita_post' post.id %}" class="botao_editar">
+                               <button>
+                                    <i class="material-icons" style="color:black">edit</i>
+                               </button>
+                            </a>
                         </div>
                     </div>
-                {% endfor %}
-            </div>
+                    <div class="post-overlay"></div>
+                    <div class="post-content">
+                        <h2>{{ post.titulo }}</h2>
+                        <p>{{ post.descricao }}</p>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
 
     </section>

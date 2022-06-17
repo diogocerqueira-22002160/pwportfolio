@@ -11,46 +11,54 @@
     <link rel="stylesheet" href="{% static 'portfolio/css/layout.css' %}">
     <script src="{% static 'portfolio/js/weather.js' %}"></script>
     <script src="{% static 'portfolio/js/clock.js' %}"></script>
+
 </head>
 <body>
     <header>
-        <div class="nome">Diogo Cerqueira</div>
+        <nav>
+            <a class="nome" href="">Diogo Cerqueira</a>
+            <div class="container">
+                <div>
+                    <h1 class="temp"></h1>
+                    <div class="city-time">
+                        <h1 class="name"></h1>
+                        <small>
+                            <span class="time" id = "clock"></span>
 
-        <div class="container">
-            <div>
-                <h1 class="temp"></h1>
-                <div class="city-time">
-                    <h1 class="name"></h1>
-                    <small>
-                        <span class="time" id = "clock"></span>
-
-                        <span class="date">
-                        </span>
-                    </small>
-                </div>
-                <div class="weather">
-                    <img src="" alt="icon" class="icon" height="50" width="50">
-                    <small>
-                        <span class="condition"></span>
-                    </small>
+                            <span class="date">
+                            </span>
+                        </small>
+                    </div>
+                    <div class="weather">
+                        <img src="" alt="icon" class="icon" height="50" width="50">
+                        <small>
+                            <span class="condition"></span>
+                        </small>
+                    </div>
                 </div>
             </div>
-        </div>
 
 
-
-        <nav>
-            <a href="{% url 'portfolio:home' %}">Home</a>
-            <a href="{% url 'portfolio:licenciatura' %}">Licenciatura</a>
-            <a href="{% url 'portfolio:projetos' %}">Projetos</a>
-            <a href="{% url 'portfolio:blog' %}">Blog</a>
-            <a href="{% url 'portfolio:quizz' %}">Quizz</a>
-            {% if request.user.is_authenticated %}
-                <a href="{% url 'portfolio:logout' %}">Logout</a>
-            {% else %}
-                <a href="{% url 'portfolio:login' %}">Login</a>
-            {% endif %}
-        </nav>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="{% url 'portfolio:home' %}">Home</a></li>
+                <li><a href="{% url 'portfolio:licenciatura' %}">Licenciatura</a></li>
+                <li><a href="{% url 'portfolio:projetos' %}">Projetos</a></li>
+                <li><a href="{% url 'portfolio:blog' %}">Blog</a></li>
+                <li><a href="{% url 'portfolio:web' %}">Web</a></li>
+                <li>
+                    {% if request.user.is_authenticated %}
+                        <a href="{% url 'portfolio:logout' %}">Logout</a>
+                    {% else %}
+                        <a href="{% url 'portfolio:login' %}">Login</a>
+                    {% endif %}
+                </li>
+            </ul>
+      </nav>
     </header>
     <main>
         {% block main %}
@@ -61,5 +69,6 @@
         ULHT, 2022
     </footer>
 
+    <script src="{% static 'portfolio/js/mobile-navbar.js' %}"></script>
 </body>
 </html>

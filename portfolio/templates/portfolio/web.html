@@ -2,7 +2,14 @@
 
 {% block main %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'portfolio/css/quizz.css' %}">
+<link rel="stylesheet" href="{% static 'portfolio/css/web.css' %}">
+    <section>
+        <h3>Laboratórios</h3>
+        <div>
+            <a href="https://pw-labs-diogocerqueira.herokuapp.com" class="labs" target="_blank">Heroku Labs</a>
+        </div>
+    </section>
+
     <section>
         <div class="quizz">
             <form method="POST" action="" autocomplete="off" enctype="multipart/form-data">
@@ -52,6 +59,21 @@
         </form>
         </div>
 
-        <img src="data:image/png;base64,{{ data }}" alt="graf">
+        <img class="grafico" src="data:image/png;base64,{{ data }}" alt="graf">
     </section>
+    <section>
+        <h3>Astronomy Picture of the Day</h3>
+        <div style="display: flex;justify-content: center">
+            <img src="" class="nasa-img">
+        </div>
+        <p class="title"></p>
+        <script src="{% static 'portfolio/js/nasa.js' %}"></script>
+    </section>
+    <section>
+        <h3>Video</h3>
+        <div class="video">
+            <iframe width="800" height="600" src="https://www.youtube.com/embed/x8LPy4e7l_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" align="middle" allowfullscreen></iframe>
+        </div>
+    </section>
+
 {% endblock %}

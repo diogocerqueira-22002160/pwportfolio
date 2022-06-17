@@ -1,83 +1,167 @@
 section{
-    min-height: 90vh;
+    position: relative;
+    min-height: 85vh;
     padding-top: 2rem;
     padding-right: 20px;
     padding-left: 20px;
 }
 
 section > h3 {
+    color: white;
     text-align: center;
     font-size: 3rem;
     padding-bottom: 2rem;
 }
 
 .cadeira_container {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  color: #10182f;
-  font-family: "Roboto", sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    color: #10182f;
+    font-family: "Roboto", sans-serif;
+    width: 68vw;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cadeira {
-  margin: 10px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  width: 300px;
+    position: relative;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 300px;
+    height: 600px;
 }
+
+.cadeira-img{
+    height: 200px;
+}
+
 .cadeira-img img{
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 .cadeira-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 20px;
-  min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    height: 400px;
 }
 
 .cadeira-nome {
-  background: #47bcd4;
-  border-radius: 50px;
-  font-size: 12px;
-  margin: 0;
-  color: #fff;
-  padding: 2px 10px;
-  text-transform: uppercase;
-  cursor: pointer;
+    background: #47bcd4;
+    border-radius: 50px;
+    font-size: 12px;
+    margin: 0;
+    color: #fff;
+    padding: 2px 10px;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 .cadeira-ects{
-  font-size: 10px;
-  padding: 2px 10px;
+    font-size: 10px;
+    padding: 2px 10px;
 }
 
 .cadeira-body p {
-  font-size: 13px;
-  margin: 0 0 40px;
+    font-size: 13px;
 }
 .cadeira-prof {
-  display: flex;
-  margin-top: auto;
+    display: flex;
+    margin-top: auto;
 }
 
 .cadeira-prof img {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
 }
 .prof-info h5 {
-  margin: 0;
+    margin: 0;
 }
 
 .cadeira-body h4{
-  margin: 20px 0 ;
+    margin: 20px 0 ;
 }
 
+.new_cadeira{
+    position: absolute;
+    display: flex;
+    right: 32px;
+    top: 32px;
+    width: 200px;
+    text-decoration: none;
+    background-image: linear-gradient(to right,rgb(0, 92, 197), rgb(90, 20, 220));
+    border: none;
+    padding: 15px;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.new_professor{
+    position: absolute;
+    display: flex;
+    right: 32px;
+    top: 90px;
+    width: 200px;
+    text-decoration: none;
+    background-image: linear-gradient(to right,rgb(0, 92, 197), rgb(90, 20, 220));
+    border: none;
+    padding: 15px;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.botao_editar{
+    position: absolute;
+    right: 20px;
+    top: 220px;
+    width: 50px;
+    height: 50px;
+}
+
+.botao_editar button{
+    background-color: transparent;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    border-radius: 50%;
+    border: none;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+@media (max-width: 1400px) {
+
+    .new_cadeira{
+        width: fit-content;
+        right: 10px;
+        top: 90px;
+        padding: 10px;
+    }
+
+    .new_professor{
+        width: fit-content;
+        right: 150px;
+        padding: 10px;
+    }
+
+    section > h3{
+        font-size: 2rem;
+        padding-bottom: 70px;
+    }
+}

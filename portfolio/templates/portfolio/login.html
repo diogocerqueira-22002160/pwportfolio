@@ -1,20 +1,38 @@
 {% extends "portfolio/layout.html" %}
 
 {% block main %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'portfolio/css/login.css' %}">
+    <section>
+        <h3>Login</h3>
 
-    <h1>Login</h1>
+        <div class="login">
+            <form action="{% url 'portfolio:login' %}" method="POST" autocomplete="off">
+                {% csrf_token %}
 
-    {% if message %}
-      <p> {{ message }} </p>
-    {% endif %}
+                {% if message %}
+                    <p> {{ message }} </p>
+                {% endif %}
 
-    <form action="{% url 'portfolio:login' %}" method="POST">
-        {% csrf_token %}
-        <input type="text" name="username" placeholder="username">
-        <input type="password" name="password" placeholder="password">
+                <div class="inputBox">
+                    <input type="text" name="username" id="username" class="inputText" required>
+                    <label for="username" class="labelInput">Username</label>
+                </div>
+                <br>
+                <div class="inputBox">
+                    <input type="password" name="password" id="password" class="inputText" required>
+                    <label for="password" class="labelInput">Password</label>
+                </div>
+                <br>
 
-        <input type="submit" value="Login">
-    </form>
+                <input type="submit" id="submit" value="Login">
+            </form>
+
+
+
+        </div>
+    </section>
+
 
 
 {% endblock main %}

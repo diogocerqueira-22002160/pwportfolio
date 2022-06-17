@@ -1,0 +1,31 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'portfolio/css/novo.css' %}">
+    <section>
+        <h3>Novo post</h3>
+        <div class="novo">
+            <form method="post" action="" autocomplete="off">
+                {% csrf_token %}
+                <p>
+                    <input type="text" name="autor" class="inputText" maxlength="30" required="" id="id_autor">
+                    <label for="id_autor">Autor:</label>
+                </p>
+                <br>
+                <p>
+                    <input type="text" name="titulo" class="inputText" maxlength="30" required="" id="id_titulo"><label for="id_titulo">Titulo:</label>
+                    <label for="id_titulo">Titulo:</label>
+                </p>
+                <br>
+                <p>
+                    <textarea name="descricao" cols="40" rows="10" class="inputText" maxlength="255" required="" id="id_descricao"></textarea>
+                    <label for="id_descricao">Descricao:</label>
+                </p>
+                <br>
+                <br>
+                <input type="submit" value="Gravar" id="submit">
+            </form>
+        </div>
+    </section>
+{% endblock %}

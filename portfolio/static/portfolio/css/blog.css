@@ -1,7 +1,6 @@
-
-
 section{
-    min-height: 90vh;
+    position: relative;
+    min-height: 85vh;
     padding-top: 2rem;
     padding-right: 20px;
     padding-left: 20px;
@@ -14,20 +13,10 @@ section > h3 {
     padding-bottom: 2rem;
 }
 
-.post_body{
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-    font-family:'Poppins',sans-serif;
-}
-
 .posts_container{
     position: relative;
-    width: 1000px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
@@ -95,6 +84,10 @@ section > h3 {
     cursor: pointer;
     border-radius: 50%;
     transition: 0.5s;
+}
+
+.post{
+    margin: 10px;
 }
 
 .posts_container .post .post-overlay:hover{
@@ -172,24 +165,32 @@ section > h3 {
     cursor: pointer;
 }
 
-.novo {
-    width: 100%;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: right;
-}
-
 .new_post{
+    position: absolute;
+    display: flex;
+    right: 32px;
+    top: 32px;
+    width: 200px;
     text-decoration: none;
     background-image: linear-gradient(to right,rgb(0, 92, 197), rgb(90, 20, 220));
     border: none;
-    width: 15%;
     padding: 15px;
     color: white;
-    font-size: 15px;
     cursor: pointer;
     border-radius: 10px;
-    text-align: center;
+    justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (max-width: 800px) {
+
+    .new_post{
+        width: revert;
+        right: 10px;
+        padding: 10px;
+    }
+
+    section > h3{
+        font-size: 2rem;
+    }
 }
